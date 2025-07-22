@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="main-pg-body">
@@ -14,13 +16,17 @@
             <p>Amel</p>
         </div>
 
-        <nav>
-            <ul>
+        <nav class="pages-nav">
+            <ul class="nav-list">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <a href="#" class="burger-menu-btn" onclick="toggleBurgerMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
     </header>
 
     <main class="main-desc-wrapper">
@@ -32,7 +38,7 @@
                 <h3 class="job-title">Frontend Developer</h3>
             </div>
 
-            <div class="button-group">
+            <div class="action-btn-group">
                 <button class="action-btn">Download CV</button>
                 <button class="action-btn dark">Contact Info</button>
             </div>

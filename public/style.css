@@ -18,6 +18,7 @@
     --primary-color: #000000;
     --secondary-color: #404040;
     --dark-gray: #222222;
+    --light-gray: #eeeeee;
 }
 
 * {
@@ -27,25 +28,23 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html,
-body {
+html {
     height: 100%;
-    min-width: fit-content;
 }
 
 .main-pg-body {
     display: flex;
     flex-direction: column;
+    min-height: 100%;
 }
 
 .main-pg-header {
-    height: 80px;
     background-color: white;
     box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.20);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 1.25em 3em;
     top: 0;
     position: sticky;
 }
@@ -53,45 +52,47 @@ body {
 .main-pg-header .logo {
     font-family: 'Sansation', sans-serif;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 2.5rem;
     color: var(--secondary-color);
 }
 
-.main-pg-header nav {
+.pages-nav {
     display: flex;
     align-items: center;
 }
 
-.main-pg-header nav ul {
-    display: flex;
-    gap: 30px;
+.nav-list {
     list-style: none;
+    display: flex;
+    gap: 2em;
+
+    li a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: var(--secondary-color);
+        transition: color 0.3s ease;
+
+        @media screen and (hover: hover) {
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
 }
 
-.main-pg-header nav ul li a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    color: var(--secondary-color);
-    transition: color 0.3s ease;
-}
-
-.main-pg-header nav ul li a:hover {
-    color: var(--primary-color);
-}
 
 .main-pg-footer {
     background-color: var(--dark-gray);
     bottom: 0;
     width: 100%;
-    height: 40px;
-    padding: 30px 20px;
+    padding: 1.25em 2em;
 }
 
 .copyright {
     height: 100%;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 1.25rem;
     text-align: center;
     display: flex;
     align-items: center;
@@ -100,14 +101,14 @@ body {
 
 .main-desc-wrapper {
     width: fit-content;
-    margin: 40px auto;
+    align-self: center;
     display: flex;
     flex: 1;
-    column-gap: 10px;
+    margin: 2rem 0;
+    gap: 1.5rem;
     align-items: center;
     animation: fadein-from-top 1s ease-in-out;
 }
-
 
 .main-desc-wrapper .avatar {
     width: 256px;
@@ -125,75 +126,84 @@ body {
     padding: 0 10px;
 }
 
-.main-desc .intro {
+.intro {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 0.25em;
+
+    .introduction {
+        font-size: 1em;
+        color: var(--secondary-color);
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .job-title {
+        font-size: 1.1rem;
+        color: var(--secondary-color);
+    }
 }
 
-.main-desc .introduction {
-    font-size: 1em;
-    color: var(--secondary-color);
-}
-
-.main-desc .name {
-    font-size: 2rem;
-}
-
-.job-title {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-}
-
-.button-group {
+.action-btn-group {
     display: flex;
-    gap: 10px;
+    gap: 1.25em;
     align-items: center;
 }
 
 .action-btn {
-    padding: 12px 24px;
+    padding: 0.75em 1.25em;
     border: 1px solid var(--dark-gray);
-    border-radius: 50px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
+
+    border-radius: 2em;
     cursor: pointer;
     transition: all 0.3s ease;
     background: white;
     color: var(--dark-gray);
-    outline: none;
     text-align: center;
+
+    &.dark {
+        background: var(--dark-gray);
+        color: white;
+        border-color: var(--dark-gray);
+    }
+
+    @media screen and (hover: hover) {
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
 }
 
-.action-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.action-btn:active {
-    transform: translateY(0);
-}
-
-.action-btn.dark {
-    background: var(--dark-gray);
-    color: white;
-    border-color: var(--dark-gray);
+.burger-menu-btn {
+    display: none;
 }
 
 .socials {
     display: flex;
-    gap: 16px;
+    gap: 1.25em;
+    align-items: center;
     justify-content: center;
 }
 
 .social-link {
     text-decoration: none;
     transition: all 0.3s ease;
-}
 
-.social-link:hover {
-    transform: translateY(-2px);
+    @media screen and (hover: hover) {
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
 }
 
 .social-link img {
@@ -202,102 +212,65 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .main-pg-header {
-        padding: 0 30px;
-    }
-
     .main-pg-header .logo {
-        font-size: 28px;
+        font-size: 2rem;
     }
 
-    .main-pg-header nav ul {
-        gap: 20px;
-    }
+    .nav-list {
+        gap: 1em;
 
-    .main-pg-header nav ul li a {
-        font-size: 18px;
+        & li a {
+            font-size: 1.25rem;
+        }
     }
 
     .main-desc-wrapper {
         flex-direction: column;
-        column-gap: 0;
-        row-gap: 30px;
-        margin: 30px auto;
-        text-align: center;
-    }
-
-    .main-desc-wrapper .avatar {
-        width: 200px;
-        height: 200px;
     }
 
     .copyright {
-        font-size: 16px;
-        justify-content: center;
+        font-size: 0.75em;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .main-pg-header {
-        padding: 0 20px;
+    .burger-menu-btn {
+        display: block;
     }
 
-    .main-pg-header .logo {
-        font-size: 24px;
+    .pages-nav {
+        position: absolute;
+        top: 100%;
+
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
     }
 
-    .main-pg-header nav {
-        position: relative;
+    .burger-menu-btn {
+        color: var(--primary-color);
+        font-size: 1.5em;
     }
 
-    .main-pg-header nav ul {
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+    .pages-nav.open {
+        display: flex;
     }
 
-    .main-pg-header nav ul li a {
-        font-size: 16px;
-    }
-
-    .main-desc-wrapper {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-
-    .main-desc-wrapper .avatar {
-        width: 150px;
-        height: 150px;
-    }
-
-    .main-desc .name {
-        font-size: 1.8rem;
-    }
-
-    .job-title {
-        font-size: 1rem;
-    }
-
-    .button-group {
+    .nav-list {
         flex-direction: column;
         width: 100%;
-    }
+        gap: 0;
 
-    .action-btn {
-        width: 100%;
-        max-width: 250px;
-    }
+        li {
+            border-bottom: 1px solid var(--light-gray);
+        }
 
-    .socials {
-        gap: 12px;
-    }
-
-    .social-link img {
-        width: 28px;
-        height: 28px;
-    }
-
-    .copyright {
-        font-size: 14px;
+        li a {
+            display: block;
+            padding: 1em;
+            font-size: 1rem;
+        }
     }
 }
