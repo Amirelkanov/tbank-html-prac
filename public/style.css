@@ -310,3 +310,28 @@ html {
         }
     }
 }
+
+@media print {
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: none;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    .socials {
+        flex-direction: column;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+    }
+
+    .main-pg-header,
+    .main-pg-footer {
+        display: none;
+    }
+}

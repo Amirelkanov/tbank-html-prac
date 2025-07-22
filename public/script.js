@@ -16,3 +16,10 @@ function toggleTheme() {
     document.querySelector('.theme-btn').firstElementChild.classList.toggle('fa-regular');
     document.querySelector('.theme-btn').firstElementChild.classList.toggle('fa-solid');
 }
+
+function downloadFile(url) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = url.split('/').pop();
+    link.click();
+}
