@@ -59,6 +59,7 @@ html {
 .pages-nav {
     display: flex;
     align-items: center;
+    column-gap: 1em;
 }
 
 .nav-list {
@@ -79,6 +80,17 @@ html {
             }
         }
     }
+}
+
+.theme-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0.25em;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    color: var(--dark-gray);
 }
 
 
@@ -210,6 +222,8 @@ html {
     width: 32px;
     height: 32px;
 }
+
+
 
 @media screen and (max-width: 768px) {
     .main-pg-header .logo {
