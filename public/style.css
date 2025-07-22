@@ -302,28 +302,3 @@ body {
         font-size: 14px;
     }
 }
-
-@media screen and (max-width: 320px) {
-    .main-pg-header {
-        padding: 0 15px;
-    }
-
-    .main-desc-wrapper .avatar {
-        width: 120px;
-        height: 120px;
-    }
-
-    .main-desc .name {
-        font-size: 1.5rem;
-    }
-
-    .main-desc .introduction,
-    .job-title {
-        font-size: 0.9rem;
-    }
-
-    .action-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-}
