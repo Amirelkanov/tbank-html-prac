@@ -154,7 +154,7 @@ body {
 
 .action-btn {
     padding: 12px 24px;
-    border: 1px solid #333;
+    border: 1px solid var(--dark-gray);
     border-radius: 50px;
     font-size: 16px;
     font-weight: 500;
