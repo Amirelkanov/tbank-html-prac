@@ -138,7 +138,12 @@ body {
     color: var(--secondary-color);
 }
 
+.main-desc .name {
+    font-size: 2rem;
+}
+
 .job-title {
+    font-size: 1.1rem;
     color: var(--secondary-color);
 }
 
@@ -225,14 +230,6 @@ body {
     .main-desc-wrapper .avatar {
         width: 200px;
         height: 200px;
-    }
-
-    .main-desc .name {
-        font-size: 2rem;
-    }
-
-    .job-title {
-        font-size: 1.1rem;
     }
 
     .copyright {
