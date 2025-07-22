@@ -14,12 +14,24 @@
     }
 }
 
-:root {
+body {
     --primary-color: #000000;
     --secondary-color: #404040;
-    --dark-gray: #222222;
+    --accent-paper-color: #222222;
     --light-gray: #eeeeee;
+    --paper-color: white;
+
+    background-color: var(--paper-color);
 }
+
+body.dark {
+    --primary-color: #ffffff;
+    --secondary-color: #eeeeee;
+    --accent-paper-color: #333333;
+    --light-gray: #222222;
+    --paper-color: #111111;
+}
+
 
 * {
     margin: 0;
@@ -39,7 +51,7 @@ html {
 }
 
 .main-pg-header {
-    background-color: white;
+    background-color: var(--paper-color);
     box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.20);
     display: flex;
     justify-content: space-between;
@@ -49,7 +61,13 @@ html {
     position: sticky;
 }
 
-.main-pg-header .logo {
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.logo {
     font-family: 'Sansation', sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
@@ -59,7 +77,6 @@ html {
 .pages-nav {
     display: flex;
     align-items: center;
-    column-gap: 1em;
 }
 
 .nav-list {
@@ -86,16 +103,17 @@ html {
     border: none;
     background: none;
     cursor: pointer;
-    padding: 0.25em;
+    padding: 0.5em;
     display: flex;
     align-items: center;
     font-size: 1.5em;
-    color: var(--dark-gray);
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
 }
 
 
 .main-pg-footer {
-    background-color: var(--dark-gray);
+    background-color: var(--accent-paper-color);
     bottom: 0;
     width: 100%;
     padding: 1.25em 2em;
@@ -125,7 +143,7 @@ html {
 .main-desc-wrapper .avatar {
     width: 256px;
     height: 256px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 50%;
 }
 
@@ -151,6 +169,7 @@ html {
 
     .name {
         font-size: 2rem;
+        color: var(--primary-color);
     }
 
     .job-title {
@@ -167,21 +186,21 @@ html {
 
 .action-btn {
     padding: 0.75em 1.25em;
-    border: 1px solid var(--dark-gray);
+    border: 1px solid var(--primary-color);
     font-size: 1rem;
     font-weight: 500;
 
     border-radius: 2em;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: white;
-    color: var(--dark-gray);
+    background: var(--paper-color);
+    color: var(--primary-color);
     text-align: center;
 
     &.dark {
-        background: var(--dark-gray);
-        color: white;
-        border-color: var(--dark-gray);
+        background: var(--primary-color);
+        color: var(--paper-color);
+        border-color: var(--primary-color);
     }
 
     @media screen and (hover: hover) {
@@ -218,11 +237,14 @@ html {
     }
 }
 
-.social-link img {
+.social-link svg {
     width: 32px;
     height: 32px;
-}
 
+    path {
+        fill: var(--primary-color);
+    }
+}
 
 
 @media screen and (max-width: 768px) {
@@ -258,7 +280,7 @@ html {
 
         left: 0;
         width: 100%;
-        background: white;
+        background: var(--paper-color);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: none;
     }
