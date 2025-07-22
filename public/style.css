@@ -3,12 +3,12 @@
 
 
 @keyframes fadein-from-top {
-    0% {
+    from {
         opacity: 0;
         transform: translateY(-2%);
     }
 
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
