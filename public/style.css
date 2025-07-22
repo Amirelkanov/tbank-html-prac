@@ -2,13 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap');
 
 
-:root {
-    --primary-color: #000000;
-    --secondary-color: #404040;
-    --dark-gray: #222222;
-}
-
-
 @keyframes fadein-from-top {
     0% {
         opacity: 0;
@@ -19,6 +12,12 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #404040;
+    --dark-gray: #222222;
 }
 
 * {
