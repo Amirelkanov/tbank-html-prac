@@ -196,7 +196,7 @@ body {
     color: var(--primary-color);
     text-align: center;
 
-    &.dark {
+    &.secondary {
         background: var(--primary-color);
         color: var(--paper-color);
         border-color: var(--primary-color);
