@@ -20,8 +20,6 @@ body {
     --accent-paper-color: #222222;
     --light-gray: #eeeeee;
     --paper-color: white;
-
-    background-color: var(--paper-color);
 }
 
 body.dark {
@@ -31,7 +29,6 @@ body.dark {
     --light-gray: #222222;
     --paper-color: #111111;
 }
-
 
 * {
     margin: 0;
@@ -44,10 +41,11 @@ html {
     height: 100%;
 }
 
-.main-pg-body {
+body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    background-color: var(--paper-color);
 }
 
 .main-pg-header {
